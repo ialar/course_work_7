@@ -2,6 +2,7 @@
 
 import os
 from pathlib import Path
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -17,7 +18,8 @@ INSTALLED_APPS = ['django.contrib.admin',
                   'django.contrib.messages',
                   'django.contrib.staticfiles',
                   'rest_framework',
-                  'users']
+                  'users',
+                  'habits']
 MIDDLEWARE = ['django.middleware.security.SecurityMiddleware',
               'django.contrib.sessions.middleware.SessionMiddleware',
               'django.middleware.common.CommonMiddleware',
