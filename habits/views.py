@@ -11,15 +11,15 @@ class HabitCreateAPIView(CreateAPIView):
     # permission_classes = (IsAuthenticated,)
 
 
+class HabitRetrieveAPIView(RetrieveAPIView):
+    queryset = Habit.objects.all()
+    serializer_class = HabitSerializer
+
+
 class HabitListAPIView(ListAPIView):
     queryset = Habit.objects.all()
     serializer_class = HabitSerializer
     pagination_class = CustomPagination
-
-
-class HabitRetrieveAPIView(RetrieveAPIView):
-    queryset = Habit.objects.all()
-    serializer_class = HabitSerializer
 
 
 class HabitUpdateAPIView(UpdateAPIView):
