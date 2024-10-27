@@ -9,7 +9,7 @@ class Habit(models.Model):
     IS_ENJOYABLE_CHOICES = {True: "Приятная", False: "Полезная"}
     PUBLIC_CHOICES = {True: "Публичная", False: "Личная"}
 
-    owner = models.ForeignKey(U, on_delete=models.CASCADE, verbose_name="Пользователь")
+    owner = models.ForeignKey(U, on_delete=models.CASCADE, verbose_name="Пользователь", **NULLABLE)
     place = models.CharField(max_length=50, verbose_name="Место выполнения привычки")
     time = models.TimeField(max_length=25, verbose_name="Время, когда надо выполнить привычку")
     action = models.CharField(max_length=100, verbose_name="Действие, которое надо выполнить")
