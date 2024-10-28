@@ -17,8 +17,8 @@ class Habit(models.Model):
     reward = models.CharField(max_length=50, verbose_name="Вознаграждение", **NULLABLE)
     related = models.ForeignKey('self', on_delete=models.SET_NULL, verbose_name='Связанная привычка', **NULLABLE)
     frequency = models.PositiveSmallIntegerField(default=7, verbose_name="Периодичность (число раз в неделю)")
-    is_enjoyable = models.BooleanField(default=True, choices=IS_ENJOYABLE_CHOICES, verbose_name="Приятная")
-    is_public = models.BooleanField(default=True, choices=PUBLIC_CHOICES, verbose_name="Публичная")
+    is_enjoyable = models.BooleanField(default=True, choices=IS_ENJOYABLE_CHOICES, verbose_name="Приятная ли")
+    is_public = models.BooleanField(default=True, choices=PUBLIC_CHOICES, verbose_name="Публичная ли")
 
     def __str__(self):
         return f'Я буду {self.action} в {self.time} в {self.place}.'
