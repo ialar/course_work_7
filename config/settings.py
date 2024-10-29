@@ -20,6 +20,8 @@ INSTALLED_APPS = ['django.contrib.admin',
                   'django.contrib.staticfiles',
                   'rest_framework',
                   'rest_framework_simplejwt',
+                  'corsheaders',
+                  'drf_yasg',
                   'users',
                   'habits']
 
@@ -29,7 +31,11 @@ MIDDLEWARE = ['django.middleware.security.SecurityMiddleware',
               'django.middleware.csrf.CsrfViewMiddleware',
               'django.contrib.auth.middleware.AuthenticationMiddleware',
               'django.contrib.messages.middleware.MessageMiddleware',
+              'corsheaders.middleware.CorsMiddleware',
               'django.middleware.clickjacking.XFrameOptionsMiddleware']
+
+CORS_ALLOWED_ORIGINS = ['http://localhost:8000']
+CORS_ALLOW_ALL_ORIGINS = False
 
 ROOT_URLCONF = 'config.urls'
 TEMPLATES = [{'BACKEND': 'django.template.backends.django.DjangoTemplates',
