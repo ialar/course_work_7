@@ -7,4 +7,6 @@ django-cors-headers==4.5.0
 django-celery-beat==2.7.0
 drf-yasg==1.21.8
 celery==5.4.0
+eventlet==0.37.0
 redis==5.2.0
+requests==2.32.3
