@@ -46,5 +46,6 @@ class FrequencyValidator:
         self.field = field
 
     def __call__(self, habit):
-        if habit.get("frequency") < 1:
-            raise ValidationError("За неделю необходимо выполнить привычку хотя бы один раз.")
+        if habit.get("frequency"):
+            if habit.get("frequency") < 1:
+                raise ValidationError("За неделю необходимо выполнить привычку хотя бы один раз.")
