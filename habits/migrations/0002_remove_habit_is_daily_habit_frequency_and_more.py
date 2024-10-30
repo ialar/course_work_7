@@ -6,22 +6,28 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('habits', '0001_initial'),
+        ("habits", "0001_initial"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='habit',
-            name='is_daily',
+            model_name="habit",
+            name="is_daily",
         ),
         migrations.AddField(
-            model_name='habit',
-            name='frequency',
-            field=models.PositiveSmallIntegerField(default=7, verbose_name='Периодичность (число раз в неделю)'),
+            model_name="habit",
+            name="frequency",
+            field=models.PositiveSmallIntegerField(
+                default=7, verbose_name="Периодичность (число раз в неделю)"
+            ),
         ),
         migrations.AlterField(
-            model_name='habit',
-            name='duration',
-            field=models.PositiveSmallIntegerField(blank='True', null='True', verbose_name='Время на выполнение привычки (в секундах)'),
+            model_name="habit",
+            name="duration",
+            field=models.PositiveSmallIntegerField(
+                blank="True",
+                null="True",
+                verbose_name="Время на выполнение привычки (в секундах)",
+            ),
         ),
     ]

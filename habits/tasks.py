@@ -10,7 +10,7 @@ from habits.services import send_tg_message
 def send_habit_message():
     habits = Habit.objects.filter(owner__isnull=False)
     now = timezone.now()
-    moscow_tz = pytz.timezone('Europe/Moscow')
+    moscow_tz = pytz.timezone("Europe/Moscow")
     formatted_time = now.astimezone(moscow_tz).strftime("%H:%M")
     # print(formatted_time)
 
@@ -19,5 +19,5 @@ def send_habit_message():
         # print(hm_habit_time)
         if hm_habit_time == formatted_time:
             tg_chat = habit.owner.tg_chat_id
-            message = f'Я буду {habit.action} в {habit.time} в {habit.place}.'
+            message = f"Я буду {habit.action} в {habit.time} в {habit.place}."
             send_tg_message(tg_chat, message)

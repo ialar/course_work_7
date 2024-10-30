@@ -6,18 +6,26 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('habits', '0003_alter_habit_owner'),
+        ("habits", "0003_alter_habit_owner"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='habit',
-            name='is_enjoyable',
-            field=models.BooleanField(choices=[(True, 'Приятная'), (False, 'Полезная')], default=True, verbose_name='Приятная ли'),
+            model_name="habit",
+            name="is_enjoyable",
+            field=models.BooleanField(
+                choices=[(True, "Приятная"), (False, "Полезная")],
+                default=True,
+                verbose_name="Приятная ли",
+            ),
         ),
         migrations.AlterField(
-            model_name='habit',
-            name='is_public',
-            field=models.BooleanField(choices=[(True, 'Публичная'), (False, 'Личная')], default=True, verbose_name='Публичная ли'),
+            model_name="habit",
+            name="is_public",
+            field=models.BooleanField(
+                choices=[(True, "Публичная"), (False, "Личная")],
+                default=True,
+                verbose_name="Публичная ли",
+            ),
         ),
     ]

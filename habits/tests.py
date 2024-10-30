@@ -10,8 +10,14 @@ class HabitTestCase(APITestCase):
     def setUp(self):
         self.user = User.objects.create(email="test@test.com")
         self.client.force_authenticate(user=self.user)
-        self.habit = Habit.objects.create(owner=self.user, place="test", time="00:00:00", action="test",
-                                          is_enjoyable="False", is_public="True")
+        self.habit = Habit.objects.create(
+            owner=self.user,
+            place="test",
+            time="00:00:00",
+            action="test",
+            is_enjoyable="False",
+            is_public="True",
+        )
 
     def test_habit_retrieve(self):
         url = reverse("habits:habits-retrieve", args=(self.habit.pk,))
@@ -44,20 +50,26 @@ class HabitTestCase(APITestCase):
         url = reverse("habits:habits-list")
         response = self.client.get(url)
         data = response.json()
-        result = {"count": 1,
-                  "next": None,
-                  "previous": None,
-                  "results": [{"id": self.habit.pk,
-                               "place": self.habit.place,
-                               "time": self.habit.time,
-                               "action": self.habit.action,
-                               "duration": None,
-                               "reward": None,
-                               "frequency": self.habit.frequency,
-                               "is_enjoyable": False,
-                               "is_public": True,
-                               "owner": self.habit.owner.pk,
-                               "related": None}]}
+        result = {
+            "count": 1,
+            "next": None,
+            "previous": None,
+            "results": [
+                {
+                    "id": self.habit.pk,
+                    "place": self.habit.place,
+                    "time": self.habit.time,
+                    "action": self.habit.action,
+                    "duration": None,
+                    "reward": None,
+                    "frequency": self.habit.frequency,
+                    "is_enjoyable": False,
+                    "is_public": True,
+                    "owner": self.habit.owner.pk,
+                    "related": None,
+                }
+            ],
+        }
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(data, result)
 
