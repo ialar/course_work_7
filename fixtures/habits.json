@@ -1,0 +1,98 @@
+[
+{
+    "model": "habits.habit",
+    "pk": 5,
+    "fields": {
+        "owner": 2,
+        "place": "спортзал",
+        "time": "07:00:00",
+        "action": "делать зарядку",
+        "duration": 120,
+        "reward": "кофе с шоколадом",
+        "related": null,
+        "frequency": 5,
+        "is_enjoyable": false,
+        "is_public": true
+    }
+},
+{
+    "model": "habits.habit",
+    "pk": 7,
+    "fields": {
+        "owner": 2,
+        "place": "ладдере",
+        "time": "08:00:00",
+        "action": "играть в Гвинт",
+        "duration": 120,
+        "reward": null,
+        "related": null,
+        "frequency": 2,
+        "is_enjoyable": true,
+        "is_public": true
+    }
+},
+{
+    "model": "habits.habit",
+    "pk": 8,
+    "fields": {
+        "owner": 2,
+        "place": "test2",
+        "time": "08:00:00",
+        "action": "test2",
+        "duration": 120,
+        "reward": null,
+        "related": 7,
+        "frequency": 1,
+        "is_enjoyable": false,
+        "is_public": true
+    }
+},
+{
+    "model": "habits.habit",
+    "pk": 10,
+    "fields": {
+        "owner": 2,
+        "place": "test3",
+        "time": "08:00:00",
+        "action": "test3",
+        "duration": 90,
+        "reward": "test3",
+        "related": null,
+        "frequency": 5,
+        "is_enjoyable": false,
+        "is_public": false
+    }
+},
+{
+    "model": "habits.habit",
+    "pk": 11,
+    "fields": {
+        "owner": 3,
+        "place": "test4",
+        "time": "12:00:00",
+        "action": "test4",
+        "duration": 10,
+        "reward": "test4",
+        "related": null,
+        "frequency": 4,
+        "is_enjoyable": false,
+        "is_public": false
+    }
+},
+{
+    "model": "habits.habit",
+    "pk": 12,
+    "fields": {
+        "owner": 3,
+        "place": "зале",
+        "time": "00:49:00",
+        "action": "делать приседания",
+        "duration": 60,
+        "reward": "test5",
+        "related": null,
+        "frequency": 3,
+        "is_enjoyable": false,
+        "is_public": true
+    }
+}
+]
