@@ -36,8 +36,12 @@ create darabase <db_name>;
 ```commandline
 redis-server
 ```
-
-Для запуска трекера выполните следующую команду:
-```shell
+Запустите сервер:
+```commandline
 python manage.py runserver
+```
+Запустите Celery:
+```commandline
+celery -A config worker -l INFO -P eventlet
+celery -A config beat -l info -S django
 ```
